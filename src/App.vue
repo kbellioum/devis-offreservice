@@ -86,6 +86,13 @@ export default {
     display () {
       var type = this.allQuotations.find(item => item.type == this.quotationtype)
       this.price = type.price
+      this.$store.dispatch('pushUserData', {
+        firstname: this.firstname,
+        lastname: this.lastname,
+        email: this.email,
+        phone: this.phone,
+        quote: this.quotationtype
+      })
     }
   },
   computed: {

@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     quotations: [],
+    usersData: [],
     loading: false,
     error: null
   },
@@ -16,10 +17,20 @@ export const store = new Vuex.Store({
     },
     createQuote (state, payload) {
       console.log("quotations : ", state.quotations, payload)
-      // state.quotations.push(payload)
+      state.quotations.push(payload)
+    },
+    pushUserData (state, payload) {
+      console.log("users : ", state.usersData, payload)
+      state.usersData.push(payload)
     }
   },
   actions: {
+    pushUserData ({commit}, payload) {
+      firebase.database().ref('users').push(payload)
+        .then(() => {
+          commit('pushUserData', payload)
+        })
+    },
     createQuote ({commit}, payload) {
       firebase.database().ref('quotations').push(payload)
         .then(() => {
