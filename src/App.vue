@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-      <div class="">
-        <div class="flex justify-center">
-          <h1 class="f3 fw1 f1-m f-headline-l helvetica">Demande de cotation</h1>
-        </div>
-
+    <div class="">
+      <div class="flex justify-center">
+        <h1 class="f3 fw1 f1-m f-headline-l helvetica">Demande de cotation</h1>
+      </div>
       <div class="flex pr7 pl7">
         <div class="flex justify-center w-50 pa3 ml2 mr2">
           <div class="dt-row">
