@@ -21,7 +21,7 @@
             <div class="dt-row">
               <div class="dtc tc">
                 <label class="fl">Prénom: </label>
-                <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" v-model="lastprenom">
+                <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" v-model="lastname">
               </div>
             </div>
             <div class="dt-row">
@@ -95,9 +95,19 @@ export default {
   },
   methods: {
     display () {
-      var type = this.quote.find(item => item.type == this.quotationtype)
+      var type = this.allQuotations.find(item => item.type == this.quotationtype)
+      // this.$store.dispatch('createQuote', {
+      //   price: '20 000,00',
+      //   type: 'WSI'
+      // })
+      console.log(this.allQuotations)
       this.price = type.price
     }
+  },
+  computed: {
+    allQuotations () {
+        return this.$store.getters.getQoutes
+      }
   }
 }
 </script>
