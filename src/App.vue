@@ -15,27 +15,35 @@
             <div class="dt-row">
               <div class="dtc tc">
                 <label class="fl">Nom: </label>
-                <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" name="" value="" v-model="nom">
+                <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" v-model="firstname">
               </div>
             </div>
             <div class="dt-row">
               <div class="dtc tc">
                 <label class="fl">Prénom: </label>
-                <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" name="" value="" v-model="prenom">
+                <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" v-model="lastprenom">
               </div>
             </div>
             <div class="dt-row">
               <div class="dtc tc">
                 <div class="measure">
                   <label class="fl">Email</label>
-                  <input class="input-reset ba b--black-20 pa2 mb2  w-100 br2" type="text" name="" value="" v-model="email">
+                  <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="email" v-model="email">
+                </div>
+              </div>
+            </div>
+            <div class="dt-row">
+              <div class="dtc tc">
+                <div class="measure">
+                  <label class="fl">Phone</label>
+                  <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" v-model="phone">
                 </div>
               </div>
             </div>
             <div class="dt-row">
               <div class="dtc tc">
                 <label class="fl mb2">Type de cotation: </label>
-                <select class="ba b--black-20 pa2 mb2 w-100 br2" v-model='typecotation'>
+                <select class="ba b--black-20 pa2 mb2 w-100 br2" v-model='quotationtype'>
                   <option value="WSE">Site web e-commerce</option>
                   <option value="WSC">Site web catalogue</option>
                   <option value="WSI">Site Web Institutionnel</option>
@@ -51,7 +59,7 @@
             <hr>
             <div class="dt-row">
               <div class="dtc tc">
-                <p class="sans-serif fw1 f1 mt0 mb2">{{ prix }}</p>
+                <p class="sans-serif fw1 f1 mt0 mb2">{{ price }}</p>
                 <p class="helvetica f2 fw4 ma0">MAD</p>
               </div>
             </div>
@@ -66,28 +74,29 @@
 export default {
   data () {
     return {
-      cote: [
+      quote: [
         {
-          type: 'WSE', prix: '10 000,00'
+          type: 'WSE', price: '10 000,00'
         },
         {
-          type: 'WSC', prix: '25 000,00'
+          type: 'WSC', price: '25 000,00'
         },
         {
-          type: 'WSI', prix: '8 900,00'
+          type: 'WSI', price: '8 900,00'
         }
       ],
-      nom: '',
-      prenom: '',
+      firstname: '',
+      lastname: '',
       email: '',
-      typecotation: '',
-      prix: '0 000,00'
+      phone: '',
+      quotationtype: '',
+      price: '0 000,00'
     }
   },
   methods: {
     display () {
-      var type = this.cote.find(item => item.type == this.typecotation)
-      this.prix = type.prix
+      var type = this.quote.find(item => item.type == this.quotationtype)
+      this.price = type.price
     }
   }
 }
