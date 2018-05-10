@@ -74,17 +74,6 @@
 export default {
   data () {
     return {
-      quote: [
-        {
-          type: 'WSE', price: '10 000,00'
-        },
-        {
-          type: 'WSC', price: '25 000,00'
-        },
-        {
-          type: 'WSI', price: '8 900,00'
-        }
-      ],
       firstname: '',
       lastname: '',
       email: '',
@@ -96,11 +85,6 @@ export default {
   methods: {
     display () {
       var type = this.allQuotations.find(item => item.type == this.quotationtype)
-      // this.$store.dispatch('createQuote', {
-      //   price: '20 000,00',
-      //   type: 'WSI'
-      // })
-      console.log(this.allQuotations)
       this.price = type.price
     }
   },
