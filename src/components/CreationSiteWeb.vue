@@ -39,14 +39,31 @@
       <section v-if="flag">
         <div class="w-100">
           <div class="fl w-50 pa2">
-            <label class="fl">Nom complet </label>
-            <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" v-model="name">
-            <label class="fl">Email</label>
-            <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="email" v-model="email">
+            <div class="">
+              <label class="fl">Nom complet </label>
+              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote nom" name="name" v-model="name"  v-validate="'required|alpha'">
+              <span class="red" v-if="errors.has('name')">
+                  {{ errors.first('name') }}
+              </span>
+            </div>
+
+            <div class="">
+              <label class="fl">Email</label>
+              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote email" name="email" v-model="email" v-validate="'required|email'">
+              <span class="red" v-if="errors.has('email')">
+                  {{ errors.first('email') }}
+              </span>
+            </div>
           </div>
+
           <div class="fl w-50 pa2">
-            <label class="fl">Phone</label>
-            <input class="input-reset ba b--black-20 pa2 mb2 w-100 br2" type="text" v-model="phone">
+            <div class="">
+              <label class="fl">Phone</label>
+              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote numéro de mobile" name="phone" v-model="phone" v-validate="'required|numeric'">
+              <span class="red" v-if="errors.has('phone')">
+                  {{ errors.first('phone') }}
+              </span>
+            </div>
           </div>
         </div>
 
@@ -69,12 +86,12 @@
 </template>
 
 <script>
-
 // *Création de site web*             CODE
 // - Site vitrine (présentation)      SWV
 // - Site e-commerce (vente)          SWE
 // - Blog (actualité)                 SWB
 // - Forum (communauté)               SWF
+import swal from 'sweetalert';
 
 export default {
   data () {
@@ -89,14 +106,21 @@ export default {
   },
   methods: {
     display () {
-      var type = this.allQuotations.find(item => item.type == this.type)
-      this.price = type.price
-      this.$store.dispatch('pushUserData', {
-        name: this.name,
-        email: this.email,
-        phone: this.phone,
-        quote: this.type
-      })
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          swal("Form Submitted!", "Votre cotation est prête", "success");
+          var type = this.allQuotations.find(item => item.type == this.type)
+          this.price = type.price
+          this.$store.dispatch('pushUserData', {
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+            quote: this.type
+          })
+          return;
+        }
+        swal("Erreur", "Prière de saisir les informations manquantes", "error");
+      });
     }
   },
   watch: {
