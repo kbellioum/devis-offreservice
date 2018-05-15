@@ -142,9 +142,6 @@ export default {
           this.priceflag = true
           this.flag = false
           this.error = false
-
-          // this.$store.dispatch('loadUsersData')
-
           this.$router.push('/price')
           return;
         }
