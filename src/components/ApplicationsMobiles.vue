@@ -147,24 +147,31 @@ export default {
       switch (value) {
         case 'AMC':
           this.flag = true
+          this.priceflag = false
           break;
         case 'ARE':
           this.flag = true
+          this.priceflag = false
           break;
         case 'AJM':
           this.flag = true
+          this.priceflag = false
           break;
         case 'AAC':
           this.flag = true
+          this.priceflag = false
           break;
         case 'APA':
           this.flag = true
+          this.priceflag = false
           break;
         case 'AUT':
           this.flag = true
+          this.priceflag = false
           break;
         default:
           this.flag = true
+          this.priceflag = false
       }
     }
   },

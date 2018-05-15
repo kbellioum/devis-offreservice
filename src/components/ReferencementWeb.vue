@@ -142,18 +142,23 @@ export default {
       switch (value) {
         case 'REC':
           this.flag = true
+          this.priceflag = false
           break;
         case 'RBL':
           this.flag = true
+          this.priceflag = false
           break;
         case 'RMA':
           this.flag = true
+          this.priceflag = false
           break;
         case 'RPA':
           this.flag = true
+          this.priceflag = false
           break;
         case 'ROT':
           this.flag = true
+          this.priceflag = false
           break;
         default:
 

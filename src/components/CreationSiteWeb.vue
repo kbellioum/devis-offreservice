@@ -137,18 +137,23 @@ export default {
       switch (value) {
         case 'SWV':
           this.flag = true
+          this.priceflag = false
           break;
         case 'SWE':
           this.flag = true
+          this.priceflag = false
           break;
         case 'SWB':
           this.flag = true
+          this.priceflag = false
           break;
         case 'SWF':
           this.flag = true
+          this.priceflag = false
           break;
         default:
           this.flag = true
+          this.priceflag = false
       }
     }
   },

@@ -149,18 +149,23 @@ export default {
       switch (value) {
         case 'GWD':
           this.flag = true
+          this.priceflag = false
           break;
         case 'GIL':
           this.flag = true
+          this.priceflag = false
           break;
         case 'GLO':
           this.flag = true
+          this.priceflag = false
           break;
         case 'GPR':
           this.flag = true
+          this.priceflag = false
           break;
         case 'G3D':
           this.flag = true
+          this.priceflag = false
           break;
         default:
 
