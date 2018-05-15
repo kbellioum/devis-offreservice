@@ -1,0 +1,104 @@
+{
+  "quotations" : {
+    "GraphisteQuote1" : {
+      "price" : "8 000,00",
+      "title" :"Webdesign",
+      "type" : "GWD"
+    },
+    "GraphisteQuote2" : {
+      "price" : "25 000,00",
+      "title" :"Illustrations",
+      "type" : "GIL"
+    },
+    "GraphisteQuote3" : {
+      "price" : "24 000,00",
+      "title" :"Logo",
+      "type" : "GLO"
+    },
+    "GraphisteQuote4" : {
+      "price" : "24 000,00",
+      "title" :"Print (flyers, cartes, catalogues...)",
+      "type" : "GPR"
+    },
+    "GraphisteQuote5" : {
+      "price" : "24 000,00",
+      "title" :"3D",
+      "type" : "G3D"
+    },
+    "CreationSiteWebQuote1" : {
+      "price" : "12 000,00",
+      "title" :"Site vitrine (présentation)",
+      "type" : "SWV"
+    },
+    "CreationSiteWebQuote2" : {
+      "price" : "13 000,00",
+      "title" :"Site e-commerce (vente)",
+      "type" : "SWE"
+    },
+    "CreationSiteWebQuote3" : {
+      "price" : "13 000,00",
+      "title" :"Blog (actualité)",
+      "type" : "SWB"
+    },
+    "CreationSiteWebQuote4" : {
+      "price" : "19 000,00",
+      "title" :"Forum (communauté)",
+      "type" : "SWF"
+    },
+    "ApplicationsMobilesQuote1" : {
+      "price" : "10 000,00",
+      "title" :"M-commerce",
+      "type" : "AMC"
+    },
+    "ApplicationsMobilesQuote2" : {
+      "price" : "11 000,00",
+      "title" :"Réservation en ligne",
+      "type" : "ARE"
+    },
+    "ApplicationsMobilesQuote3" : {
+      "price" : "14 000,00",
+      "title" :"Jeu mobile",
+      "type" : "AJM"
+    },
+    "ApplicationsMobilesQuote4" : {
+      "price" : "17 000,00",
+      "title" :"Actualité",
+      "type" : "AAC"
+    },
+    "ApplicationsMobilesQuote5" : {
+      "price" : "16 000,00",
+      "title" :"Petites annonces",
+      "type" : "APA"
+    },
+    "ApplicationsMobilesQuote6" : {
+      "price" : "12 000,00",
+      "title" :"Utilitaire",
+      "type" : "AUT"
+    },
+    "ReferencementWebQuote1" : {
+      "price" : "7 000,00",
+      "title" :"E-Commerce",
+      "type" : "REC"
+    },
+    "ReferencementWebQuote2" : {
+      "price" : "3 000,00",
+      "title" :"Blog",
+      "type" : "RBL"
+    },
+    "ReferencementWebQuote3" : {
+      "price" : "14 000,00",
+      "title" :"Magazine",
+      "type" : "RMA"
+    },
+    "ReferencementWebQuote4" : {
+      "price" : "13 000,00",
+      "title" :"Petites annonces",
+      "type" : "RPA"
+    },
+    "ReferencementWebQuote5" : {
+      "price" : "15 000,00",
+      "title" :"Outil",
+      "type" : "ROT"
+    }
+  }
+  }
