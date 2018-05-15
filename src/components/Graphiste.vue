@@ -113,8 +113,7 @@
 export default {
   data () {
     return {
-      firstname: '',
-      lastname: '',
+      name: '',
       email: '',
       phone: '',
       price: '0 000,00',
