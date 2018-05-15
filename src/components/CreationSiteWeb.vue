@@ -41,7 +41,7 @@
           <div class="fl w-50 pa2">
             <div class="">
               <label class="fl">Nom complet </label>
-              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote nom" name="name" v-model="name"  v-validate="'required|alpha'">
+              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote nom" name="name" v-model="name"  v-validate="'required|alpha_spaces'">
               <span class="red" v-if="errors.has('name')">
                   {{ errors.first('name') }}
               </span>
