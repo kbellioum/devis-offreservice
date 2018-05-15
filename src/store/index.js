@@ -65,7 +65,6 @@ export const store = new Vuex.Store({
       return state.quotations
     },
     getUserdata (state) {
-      console.log("In the getters: ", state.usersData)
       return state.usersData
     }
   }
