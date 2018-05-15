@@ -38,9 +38,8 @@ export default new Router({
     component: Graphiste
   },
   {
-    path: '/price/:price',
+    path: '/price',
     name: 'Price',
-    props: true,
     component: Price
   }
   ],

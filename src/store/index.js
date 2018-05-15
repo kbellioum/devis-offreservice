@@ -9,6 +9,7 @@ export const store = new Vuex.Store({
     quotations: [],
     usersData: [],
     loading: false,
+    actualQuote: [],
     error: null
   },
   mutations: {
@@ -16,12 +17,15 @@ export const store = new Vuex.Store({
       state.quotations = payload
     },
     createQuote (state, payload) {
-      console.log("quotations : ", state.quotations, payload)
+      // console.log("quotations : ", state.quotations, payload)
       state.quotations.push(payload)
     },
     pushUserData (state, payload) {
-      console.log("users : ", state.usersData, payload)
+      // console.log("users : ", state.usersData, payload)
       state.usersData.push(payload)
+    },
+    loadUsersData (state) {
+      console.log(state.usersData)
     }
   },
   actions: {
@@ -37,6 +41,12 @@ export const store = new Vuex.Store({
           commit('createQuote', payload)
         })
     },
+    loadUsersData ({commit}) {
+      firebase.database().ref('users').once('value')
+        .then(() => {
+          commit('loadUsersData')
+        })
+    },
     loadQuotations ({commit}) {
       firebase.database().ref('quotations').once('value')
       .then((data) => {
@@ -44,7 +54,7 @@ export const store = new Vuex.Store({
         let fetcheddata = data.val()
         for(let key in fetcheddata){
           tmp.push(fetcheddata[key])
-          console.log(fetcheddata[key])
+          // console.log(fetcheddata[key])
         }
         commit('setLoadedQuote', tmp)
       })
@@ -53,6 +63,10 @@ export const store = new Vuex.Store({
   getters: {
     getQoutes (state) {
       return state.quotations
+    },
+    getUserdata (state) {
+      console.log("In the getters: ", state.usersData)
+      return state.usersData
     }
   }
 })

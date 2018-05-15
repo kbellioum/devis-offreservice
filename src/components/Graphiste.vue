@@ -142,12 +142,14 @@ export default {
             name: this.name,
             email: this.email,
             phone: this.phone,
-            quote: this.type
+            quote: this.type,
+            typetitle: this.typetxt,
+            price: this.price
           })
           this.priceflag = true
           this.flag = false
           this.error = false
-          this.$router.push('/price/' + this.price + '|' + this.typetxt)
+          this.$router.push('/price')
           return;
         }
         this.error = true

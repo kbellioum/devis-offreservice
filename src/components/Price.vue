@@ -4,13 +4,13 @@
     <div class="dt">
       <div class="dt-row">
         <div class="dtc tc">
-          <h2>Le prix pour {{ price.split('|')[1] }} est de </h2>
+          <h2>Le prix pour {{ getInfo.typetitle }} est de </h2>
         </div>
       </div>
 
       <div class="dt-row">
         <div class="dtc tc">
-          <h2>{{ price.split('|')[0] }} <strong>MAD</strong> </h2>
+          <h2>{{ getInfo.price }} <strong>MAD</strong> </h2>
         </div>
       </div>
     </div>
@@ -20,9 +20,11 @@
 
 <script>
 export default {
-  props: [
-    'price'
-  ]
+  computed: {
+    getInfo () {
+      return this.$store.getters.getUserdata[this.$store.getters.getUserdata.length - 1]
+    }
+  }
 }
 </script>
 
