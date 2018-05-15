@@ -68,14 +68,17 @@
         </div>
 
       </section>
+      <section v-if="priceflag">
+        <h2>Le prix pour  {{ typetxt }} est de </h2>
+      </section>
 
-      <div class="dt-row">
+      <div class="dt-row" v-if="flag">
         <div class="dtc tc">
           <a class="f6 link dim br2 w-100 pv2 mb2 mt4 dib white bg-dark-blue" @click="display">Submit</a>
         </div>
       </div>
       <hr>
-      <div class="dt-row">
+      <div class="dt-row" v-if="priceflag">
         <div class="dtc tc">
           <p class="sans-serif fw1 f1 mt0 mb2">{{ price }}</p>
           <p class="helvetica f2 fw4 ma0">MAD</p>
@@ -101,7 +104,9 @@ export default {
       phone: '',
       price: '0 000,00',
       flag: false,
-      type: ''
+      type: '',
+      priceflag: false,
+      typetxt: ''
     }
   },
   methods: {
@@ -111,12 +116,15 @@ export default {
           swal("Form Submitted!", "Votre cotation est prête", "success");
           var type = this.allQuotations.find(item => item.type == this.type)
           this.price = type.price
+          this.typetxt = type.title
           this.$store.dispatch('pushUserData', {
             name: this.name,
             email: this.email,
             phone: this.phone,
             quote: this.type
           })
+          this.priceflag = true
+          this.flag = false
           return;
         }
         swal("Erreur", "Prière de saisir les informations manquantes", "error");
