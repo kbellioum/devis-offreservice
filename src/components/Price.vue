@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
 
-    <div class="dt">
+    <div class="dt" v-if="getInfo">
       <div class="dt-row">
         <div class="dtc tc">
           <h2>Le prix pour {{ getInfo.typetitle }} est de </h2>
