@@ -2,6 +2,16 @@
   <div class="flex justify-center">
 
     <div class="dt pa3 b--solid b--black-30 br0 bw0 w-50">
+
+      <div class="dt-row" v-if="error">
+        <div class="dtc tc">
+          <p class="w-100 ba br2 pa3 ma2 red bg-washed-red" role="alert">
+            <span @click="error = false" class="fr cur">X</span>
+            <strong>Ooops erreur! </strong> Prière de saisir les informations manquantes correctement.
+          </p>
+        </div>
+      </div>
+
       <div class="dt-row">
         <div class="dtc tc">
           <h2>Graphiste</h2>
@@ -99,7 +109,6 @@
 // - Logo                                  GLO
 // - Print (flyers, cartes, catalogues...) GPR
 // - 3D                                    G3D
-import swal from 'sweetalert';
 
 export default {
   data () {
@@ -112,7 +121,8 @@ export default {
       flag: false,
       type: '',
       priceflag: false,
-      typetxt: ''
+      typetxt: '',
+      error: false
     }
   },
   methods: {
@@ -125,7 +135,6 @@ export default {
     display () {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          swal("Form Submitted!", "Votre cotation est prête", "success");
           var type = this.allQuotations.find(item => item.type == this.type)
           this.price = type.price
           this.typetxt = type.title
@@ -137,9 +146,11 @@ export default {
           })
           this.priceflag = true
           this.flag = false
+          this.error = false
+          this.$router.push('/price/' + this.price + '|' + this.typetxt)
           return;
         }
-        swal("Erreur", "Prière de saisir les informations manquantes", "error");
+        this.error = true
       });
     }
   },

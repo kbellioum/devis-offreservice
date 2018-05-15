@@ -5,6 +5,7 @@ import ApplicationsMobiles from '@/components/ApplicationsMobiles'
 import RefencementWeb from '@/components/ReferencementWeb'
 import Graphiste from '@/components/Graphiste'
 import Home from '@/components/home.vue'
+import Price from '@/components/Price.vue'
 
 
 Vue.use(Router)
@@ -35,6 +36,12 @@ export default new Router({
     path: '/graphiste',
     name: 'Graphiste',
     component: Graphiste
+  },
+  {
+    path: '/price/:price',
+    name: 'Price',
+    props: true,
+    component: Price
   }
   ],
   mode: 'history'
