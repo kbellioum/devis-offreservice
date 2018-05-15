@@ -14,6 +14,13 @@
         </div>
       </div>
     </div>
+    <div class="dt" v-else>
+      <div class="dt-row">
+        <div class="dtc tc">
+          <h2 class="helvetica fw2">Prière de choisir un type de devis avant de venir sur cette page</h2>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
