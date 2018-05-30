@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
 import CreationSiteWeb from '@/components/CreationSiteWeb'
 import ApplicationsMobiles from '@/components/ApplicationsMobiles'
 import RefencementWeb from '@/components/ReferencementWeb'
@@ -9,6 +10,7 @@ import Price from '@/components/Price.vue'
 
 
 Vue.use(Router)
+Vue.use(Meta)
 
 export default new Router({
   routes: [

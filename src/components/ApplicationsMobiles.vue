@@ -175,6 +175,10 @@ export default {
     allQuotations () {
         return this.$store.getters.getQoutes
       }
+  },
+  metaInfo: {
+    title: 'Creation Application Mobile',
+    titleTemplate: null
   }
 }
 </script>

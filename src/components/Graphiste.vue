@@ -172,6 +172,10 @@ export default {
     allQuotations () {
         return this.$store.getters.getQoutes
       }
+  },
+  metaInfo: {
+    title: 'Graphiste Devis',
+    titleTemplate: null
   }
 }
 </script>

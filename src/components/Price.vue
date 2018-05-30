@@ -31,6 +31,10 @@ export default {
     getInfo () {
       return this.$store.getters.getUserdata[this.$store.getters.getUserdata.length - 1]
     }
+  },
+  metaInfo: {
+    title: 'Price Page',
+    titleTemplate: null
   }
 }
 </script>

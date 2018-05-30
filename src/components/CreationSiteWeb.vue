@@ -158,6 +158,10 @@ export default {
     allQuotations () {
         return this.$store.getters.getQoutes
       }
+  },
+  metaInfo: {
+    title: 'Creation de Site Web',
+    titleTemplate: null
   }
 }
 </script>

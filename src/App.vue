@@ -20,7 +20,11 @@ import Menu from '@/components/Menu.vue'
 export default {
   components: {
     Menu
-  }
+  },
+  metaInfo: {
+      title: 'Offre de Devis MM',
+      titleTemplate: '%s | Offre de service'
+    }
 }
 </script>
 
