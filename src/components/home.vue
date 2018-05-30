@@ -12,7 +12,6 @@ export default {
     titleTemplate: null
   }
 }
-
 </script>
 
 <style>
