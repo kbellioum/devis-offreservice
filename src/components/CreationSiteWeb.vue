@@ -1,91 +1,67 @@
 <template>
-  <div class="flex justify-center">
-
-    <div class="dt pa3 b--solid b--black-30 br0 bw0 w-50">
-
-      <div class="dt-row" v-if="error">
-        <div class="dtc tc">
-          <p class="w-100 ba br2 pa3 ma2 red bg-washed-red" role="alert">
-            <span @click="error = false" class="fr cur">X</span>
-            <strong>Ooops erreur! </strong> Prière de saisir les informations manquantes correctement.
-          </p>
-        </div>
+  <div class="fl w-100">
+    <div class="" v-if="error">
+      <div class="">
+        <p class="w-100 ba br2 pa3 ma2 red bg-washed-red" role="alert">
+          <span @click="error = false" class="fr pointer">X</span>
+          <strong>Ooops erreur! </strong> Prière de saisir les informations manquantes correctement.
+        </p>
       </div>
-
-      <div class="dt-row">
-        <div class="dtc tc">
-          <h2>Creation de site web</h2>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="flex justify-center">
-        <div class="w-100">
-          <div class="fl w-50 pa2">
-            <dd class="ma2">
-              <input name="type" value="SWV" type="radio" class="mr2" v-model="type"/>
-              <label> Site vitrine (présentation)</label>
-            </dd>
-            <dd class="ma2">
-              <input name="type" value="SWE" type="radio" class="mr2" v-model="type"/>
-              <label> Site e-commerce (vente)</label>
-            </dd>
-            <dd class="ma2">
-              <input name="type" value="SWB" type="radio" class="mr2" v-model="type"/>
-              <label> Blog (actualité)</label>
-            </dd>
-          </div>
-          <div class="fl w-50 pa2">
-            <dd class="ma2">
-              <input name="type" value="SWF" type="radio" class="mr2" v-model="type"/>
-              <label> Forum (communauté)</label>
-            </dd>
-          </div>
-        </div>
-      </div>
-      <hr>
-
-      <section v-if="flag">
-        <div class="w-100">
-          <div class="fl w-50 pa2">
-            <div class="">
-              <label class="fl">Nom complet </label>
-              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote nom" name="name" v-model="name"  v-validate="'required|alpha_spaces'">
-              <span class="red" v-if="errors.has('name')">
-                  {{ errors.first('name') }}
-              </span>
-            </div>
-
-            <div class="">
-              <label class="fl">Email</label>
-              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote email" name="email" v-model="email" v-validate="'required|email'">
-              <span class="red" v-if="errors.has('email')">
-                  {{ errors.first('email') }}
-              </span>
-            </div>
-          </div>
-
-          <div class="fl w-50 pa2">
-            <div class="">
-              <label class="fl">Phone</label>
-              <input type="text" class="input-reset ba b--black-20 pa2 mb2 w-100 br2" placeholder="Saisir vote numéro de mobile" name="phone" v-model="phone" v-validate="'required|numeric'">
-              <span class="red" v-if="errors.has('phone')">
-                  {{ errors.first('phone') }}
-              </span>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <div class="dt-row" v-if="flag">
-        <div class="dtc tc">
-          <a class="f6 link dim br2 w-100 pv2 mb2 mt4 dib white bg-dark-blue" @click="display">Submit</a>
-        </div>
-      </div>
-
     </div>
+    <h3 class="bg-near-white f5 dark-gray ph2 pv3">2. Choisissez le type du site web</h3>
+    <div class="fl w-100">
+      <div class="fl w-100 pv2">
+        <input name="type" value="SWV" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Site vitrine (présentation)</label>
+      </div>
+      <div class="fl w-100 pv2">
+        <input name="type" value="SWE" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Site e-commerce (vente)</label>
+      </div>
+      <div class="fl w-100 pv2">
+        <input name="type" value="SWB" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Blog (actualité)</label>
+      </div>
+      <div class="fl w-100 pv2">
+        <input name="type" value="SWF" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Forum (communauté)</label>
+      </div>
+    </div>
+    <section v-if="flag">
+      <div class="fl w-100 pv5">
+        <h3 class="bg-near-white f5 dark-gray ph2 pv3">3. Remplissez le formulaire de contact pour recevoir les meilleurs devis du marché!</h3>
+        <div class="fl w-100">
+          <div class="fl w-50 pv3">
+            <label class="f5 db pb2">Nom</label>
+            <input type="text" class="input-reset ba b--black-20 ph2 pv3 w-100 br2" name="name" v-model="name"  v-validate="'required|alpha_spaces'">
+            <span class="pv2 red" v-if="errors.has('name')">
+              {{ errors.first('name') }}
+            </span>
+          </div>
+        </div>
+        <div class="fl w-100">
+          <div class="fl w-50 pv3">
+            <label class="f5 db pb2">E-mail</label>
+            <input type="text" class="input-reset ba b--black-20 ph2 pv3 w-100 br2" name="email" v-model="email" v-validate="'required|email'">
+            <span class="pv2 red" v-if="errors.has('email')">
+              {{ errors.first('email') }}
+            </span>
+          </div>
+        </div>
+        <div class="fl w-100">
+          <div class="fl w-50 pv3">
+            <label class="f5 db pb2">Téléphone <span class="fw4">(optionel)</span></label>
+            <input type="text" class="input-reset ba b--black-20 ph2 pv3 w-100 br2" name="phone" v-model="phone" v-validate="'required|numeric'">
+            <span class="pv2 red" v-if="errors.has('phone')">
+              {{ errors.first('phone') }}
+            </span>
+          </div>
+        </div>
+        <div class="fl w-100 pv4">
+          <a class="ph4 pv3 f5 fw6 link pointer dim br2 pv2 white bg-green" @click="display">Envoyer</a>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -165,9 +141,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.cur {
-  cursor: pointer;
-}
-</style>

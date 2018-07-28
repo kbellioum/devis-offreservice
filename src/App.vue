@@ -1,22 +1,19 @@
 <template>
-  <div id="app">
-    <nav class="pa3 pa4-ns">
-      <a class="link dim black b fw1 f1 tc db mb3 mb4-ns" href="#" title="Home">Devis</a>
-      <Menu />
+  <div id="app" class="fl w-100">
+    <nav class="fl w-100 pv2 bg-near-white tc">
+      <a class="link dim black f4" href="/" title="Offre Devis">Offre Devis</a>
     </nav>
-
-    <main>
+    <div class="fl w-100 ph7-ns pv5-ns">
+      <Menu />
+    </div>
+    <main class="fl w-100 ph7-ns">
       <router-view></router-view>
     </main>
-
-
-
   </div>
 </template>
 
 <script>
 import Menu from '@/components/Menu.vue'
-
 export default {
   components: {
     Menu

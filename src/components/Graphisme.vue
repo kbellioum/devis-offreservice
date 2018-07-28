@@ -8,31 +8,27 @@
         </p>
       </div>
     </div>
-    <h3 class="bg-near-white f5 dark-gray ph2 pv3">2. Choisissez le type de l'application mobile</h3>
+    <h3 class="bg-near-white f5 dark-gray ph2 pv3">2. Choisissez le type de design graphique</h3>
     <div class="fl w-100">
       <div class="fl w-100 pv2">
-        <input name="type" value="AMC" type="radio" class="mr2" v-model="type"/>
-        <label class="f5">M-commerce</label>
+        <input name="type" value="GWD" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Webdesign</label>
       </div>
       <div class="fl w-100 pv2">
-        <input name="type" value="ARE" type="radio" class="mr2" v-model="type"/>
-        <label class="f5">Réservation en ligne</label>
+        <input name="type" value="GIL" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Illustrations</label>
       </div>
       <div class="fl w-100 pv2">
-        <input name="type" value="AJM" type="radio" class="mr2" v-model="type"/>
-        <label class="f5">Jeu mobile</label>
+        <input name="type" value="GLO" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Logo</label>
       </div>
       <div class="fl w-100 pv2">
-        <input name="type" value="AAC" type="radio" class="mr2" v-model="type"/>
-        <label class="f5">Actualité</label>
+        <input name="type" value="GPR" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">Print (flyers, cartes, catalogues...)</label>
       </div>
       <div class="fl w-100 pv2">
-        <input name="type" value="APA" type="radio" class="mr2" v-model="type"/>
-        <label class="f5">Petites annonces</label>
-      </div>
-      <div class="fl w-100 pv2">
-        <input name="type" value="AUT" type="radio" class="mr2" v-model="type"/>
-        <label class="f5">Utilitaire</label>
+        <input name="type" value="G3D" type="radio" class="mr2" v-model="type"/>
+        <label class="f5">3D</label>
       </div>
     </div>
     <section v-if="flag">
@@ -74,14 +70,12 @@
 </template>
 
 <script>
-
-// *Applications mobiles*     CODE
-// - M-commerce               AMC
-// - Réservation en ligne     ARE
-// - Jeu mobile               AJM
-// - Actualité                AAC
-// - Petites annonces         APA
-// - Utilitaire               AUT
+// *Graphiste*                             CODE
+// - Webdesign                             GWD
+// - Illustrations                         GIL
+// - Logo                                  GLO
+// - Print (flyers, cartes, catalogues...) GPR
+// - 3D                                    G3D
 
 export default {
   data () {
@@ -97,6 +91,12 @@ export default {
     }
   },
   methods: {
+    createquote () {
+      this.$store.dispatch('createQuote',{
+        type: 'GWD',
+        price: '8 000,00'
+      })
+    },
     display () {
       this.$validator.validateAll().then((result) => {
         if (result) {
@@ -124,26 +124,23 @@ export default {
     type: function (value) {
 
       switch (value) {
-        case 'AMC':
+        case 'GWD':
           this.flag = true
           break;
-        case 'ARE':
+        case 'GIL':
           this.flag = true
           break;
-        case 'AJM':
+        case 'GLO':
           this.flag = true
           break;
-        case 'AAC':
+        case 'GPR':
           this.flag = true
           break;
-        case 'APA':
-          this.flag = true
-          break;
-        case 'AUT':
+        case 'G3D':
           this.flag = true
           break;
         default:
-          this.flag = true
+
       }
     }
   },
@@ -153,7 +150,7 @@ export default {
       }
   },
   metaInfo: {
-    title: 'Création Application Mobile',
+    title: 'Graphiste Devis',
     titleTemplate: null
   }
 }

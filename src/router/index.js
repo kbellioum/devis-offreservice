@@ -4,7 +4,7 @@ import Meta from 'vue-meta'
 import CreationSiteWeb from '@/components/CreationSiteWeb'
 import ApplicationsMobiles from '@/components/ApplicationsMobiles'
 import RefencementWeb from '@/components/ReferencementWeb'
-import Graphiste from '@/components/Graphiste'
+import Graphisme from '@/components/Graphisme'
 import Home from '@/components/home.vue'
 import Price from '@/components/Price.vue'
 
@@ -21,7 +21,7 @@ export default new Router({
   },
   {
     path: '/creation-site-web',
-    name: 'Creation de site web',
+    name: 'Création de site web',
     component: CreationSiteWeb
   },
   {
@@ -31,13 +31,13 @@ export default new Router({
   },
   {
     path: '/referencement-web',
-    name: 'Référencement web naturel / payant',
+    name: 'Référencement naturel & payant',
     component: RefencementWeb
   },
   {
-    path: '/graphiste',
-    name: 'Graphiste',
-    component: Graphiste
+    path: '/graphisme',
+    name: 'Graphisme',
+    component: Graphisme
   },
   {
     path: '/price',
